@@ -13,7 +13,7 @@ app.use(cors());
 // var usersRouter = require('./routes/users');
 
 require('../achapet-server/routes/users')(app);
-require("dotenv-safe").config();
+require("dotenv").config();
 
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
