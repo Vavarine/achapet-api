@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.use(cors({credentials: true, origin: 'http://localhost:4200'}));
+app.use(cors());
 
 // var usersRouter = require('./routes/users');
 
@@ -22,7 +22,7 @@ require("dotenv-safe").config();
 // app.use('/users', usersRouter);
 
 connectDB();
-server = app.listen(3003, () => {
+server = app.listen(process.env.PORT || 3003, () => {
   console.log('Servidor online!')   
 })
 
